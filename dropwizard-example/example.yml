@@ -2,6 +2,11 @@ template: Hello, %s!
 
 defaultName: Stranger
 
+complexType:
+  type: specificComplexType
+  setting1: Foo
+  setting2: Bar
+
 # Database settings.
 database:
 

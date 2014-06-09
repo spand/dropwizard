@@ -2,6 +2,8 @@ package com.example.helloworld;
 
 import com.example.helloworld.core.Template;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import io.dropwizard.Configuration;
 import io.dropwizard.db.DataSourceFactory;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -15,6 +17,18 @@ public class HelloWorldConfiguration extends Configuration {
 
     @NotEmpty
     private String defaultName = "Stranger";
+
+    private ComplexType complexType;
+
+    @JsonProperty
+    public ComplexType getComplexType() {
+        return complexType;
+    }
+    
+    @JsonProperty
+    public void setComplexType(ComplexType complexType) {
+        this.complexType = complexType;
+    }
 
     @Valid
     @NotNull
